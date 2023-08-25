@@ -2,6 +2,9 @@ import {
   FETCH_INGREDIENTS_REQUEST,
   FETCH_INGREDIENTS_SUCCESS,
   FETCH_INGREDIENTS_ERROR,
+  FETCH_INGREDIENT_MEALS_REQUEST,
+  FETCH_INGREDIENT_MEALS_SUCCESS,
+  FETCH_INGREDIENT_MEALS_ERROR,
 } from "./actionTypes";
 
 export const recipeReducer = (state, action) => {
@@ -24,6 +27,26 @@ export const recipeReducer = (state, action) => {
         ...state,
         ingredientsLoading: false,
         ingredientsError: true,
+      };
+    }
+    case FETCH_INGREDIENT_MEALS_REQUEST: {
+      return {
+        ...state,
+        recipesLoading: true,
+      };
+    }
+    case FETCH_INGREDIENT_MEALS_SUCCESS: {
+      return {
+        ...state,
+        recipesLoading: false,
+        recipes: action.payload,
+      };
+    }
+    case FETCH_INGREDIENT_MEALS_ERROR: {
+      return {
+        ...state,
+        recipesLoading: false,
+        recipesError: true,
       };
     }
     default:

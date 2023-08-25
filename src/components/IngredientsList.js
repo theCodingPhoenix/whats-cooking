@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const IngredientsList = ({ ingredients }) => {
   return (
     <div>
       {ingredients.map((ingredient) => {
-        const { strIngredient: name } = ingredient;
+        const { idIngredient: id, strIngredient: name } = ingredient;
         return (
-          <p className="text-white fs-11 fw-6 ls-1 text-uppercase">{name}</p>
+          <Link to={`/recipe/ingredient/${name}`} key={id}>
+            <p>{name}</p>
+          </Link>
         );
       })}
     </div>
