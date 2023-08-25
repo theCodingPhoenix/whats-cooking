@@ -1,0 +1,36 @@
+.ingredient-list {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin: 15px;
+}
+.ingredient-list__ingredient {
+  transition: box-shadow 0.3s;
+  width: 85%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: left;
+}
+.ingredient-list__ingredient:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+@media only screen and (min-width: 468px) and (max-width: 991px) {
+  .ingredient-list {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .ingredient-list {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  .ingredient-list__ingredient img {
+    height: 200px;
+    width: 200px;
+  }
+}/*# sourceMappingURL=Ingredient-list.css.map */

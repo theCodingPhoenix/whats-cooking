@@ -1,0 +1,40 @@
+.ingredient-list {
+
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 10px;
+    margin: 15px;
+
+    &__ingredient {
+        transition: box-shadow .3s;
+        width: 85%;
+        height: fit-content;
+        margin: 15px;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        float: left;
+
+        &:hover {
+            box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+        }
+
+    }
+
+    @media only screen and (min-width: 468px) and (max-width: 991px) {
+        grid-template-columns: 33% 33% 33%;
+
+    }
+
+    @media only screen and (min-width: 992px) {
+        grid-template-columns: 25% 25% 25% 25%;
+
+        &__ingredient {
+            img {
+                height: 200px;
+                width: 200px;
+            }
+        }
+    }
+}
