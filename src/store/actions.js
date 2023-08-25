@@ -6,6 +6,9 @@ import {
   FETCH_INGREDIENT_MEALS_REQUEST,
   FETCH_INGREDIENT_MEALS_SUCCESS,
   FETCH_INGREDIENT_MEALS_ERROR,
+  FETCH_RECIPE_REQUEST,
+  FETCH_RECIPE_SUCCESS,
+  FETCH_RECIPE_ERROR,
 } from "./actionTypes";
 
 const axiosCall = axios.create({
@@ -15,6 +18,7 @@ const axiosCall = axios.create({
 const URLS = {
   ingredientList: "list.php?i=list",
   filteredIngredient: "filter.php?i=",
+  recipeLookup: "lookup.php?i=",
 };
 
 export const fetchIngredients = async (dispatch) => {
@@ -41,5 +45,24 @@ export const fetchRecipesByIngredient = async (dispatch, ingredient) => {
     });
   } catch (error) {
     dispatch({ type: FETCH_INGREDIENT_MEALS_ERROR, payload: error.message });
+  }
+};
+
+export const fetchRecipeById = async (dispatch, id) => {
+  try {
+    dispatch({
+      type: FETCH_RECIPE_REQUEST,
+    });
+
+    const response = await axiosCall.get(`${URLS.recipeLookup}${id}`);
+    dispatch({
+      type: FETCH_RECIPE_SUCCESS,
+      payload: response.data.meals,
+    });
+  } catch (error) {
+    dispatch({
+      type: FETCH_RECIPE_ERROR,
+      payload: error.message,
+    });
   }
 };
