@@ -13,12 +13,7 @@ function Recipe() {
     fetchRecipeById(dispatch, id);
   }, [id, dispatch]);
 
-  return (
-    <>
-      <h1>{recipe[0].strMeal}</h1>
-      {!recipeLoading ? <RecipeDetail recipeInfo={recipe[0]} /> : null}
-    </>
-  );
+  return <>{!recipeLoading ? <RecipeDetail recipeInfo={recipe} /> : null}</>;
 }
 
 export default Recipe;
