@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 import { getFilteredIngredients, fetchIngredients } from "../store/actions";
 
 const Home = () => {
-  const { ingredients, ingredientsLoading, filteredIngredients, dispatch } =
+  const { ingredientsLoading, filteredIngredients, dispatch } =
     useRecipeContext();
   const [searchIngredient, setSearchIngredient] = useState("");
 
