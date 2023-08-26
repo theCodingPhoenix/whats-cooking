@@ -2,9 +2,6 @@
 
 .ingredient-list {
 
-    // grid-template-columns: 200px 200px;
-    // column-gap: 10px;
-    // margin: 15px;
     width: auto;
 
 
@@ -13,12 +10,6 @@
         padding: 1em;
         transition: box-shadow .3s;
         width: auto;
-        // width: 85%;
-        // height: fit-content;
-        // margin: 15px;
-        // padding: 15px;
-        // background: #fff;
-        // float: left;
         @include brand-box-border;
 
         &:hover {
@@ -40,19 +31,4 @@
         width: 100%;
     }
 
-    @media only screen and (min-width: 468px) and (max-width: 991px) {
-        // grid-template-columns: 33% 33% 33%;
-
-    }
-
-    @media only screen and (min-width: 992px) {
-        // grid-template-columns: 25% 25% 25% 25%;
-
-        &__ingredient {
-            img {
-                // height: 200px;
-                // width: 200px;
-            }
-        }
-    }
 }
