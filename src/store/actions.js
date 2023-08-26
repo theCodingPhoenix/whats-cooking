@@ -73,15 +73,16 @@ export const fetchRecipeById = async (dispatch, id) => {
 };
 
 export const getFilteredIngredients = (dispatch, search) => {
+  console.log(search.toLowerCase());
   dispatch({
     type: FILTER_INGREDIENTS,
-    param: search,
+    param: search.toLowerCase(),
   });
 };
 
 export const getFilteredRecipes = (dispatch, search) => {
   dispatch({
     type: FILTER_RECIPES,
-    param: search,
+    param: search.toLowerCase(),
   });
 };

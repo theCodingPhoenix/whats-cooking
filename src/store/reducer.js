@@ -80,7 +80,7 @@ export const recipeReducer = (state, action) => {
       return {
         ...state,
         filteredIngredients: state.ingredients.filter((ingrdient) =>
-          ingrdient.strIngredient.includes(action.param)
+          ingrdient.strIngredient.toLowerCase().includes(action.param)
         ),
       };
     }
@@ -89,7 +89,7 @@ export const recipeReducer = (state, action) => {
       return {
         ...state,
         filteredRecipes: state.recipes.filter((recipe) =>
-          recipe.strMeal.includes(action.param)
+          recipe.strMeal.toLowerCase().includes(action.param)
         ),
       };
     }
