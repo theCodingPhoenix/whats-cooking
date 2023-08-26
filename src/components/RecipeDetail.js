@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/recipe.scss";
+import Error from "../pages/Error";
 
 function RecipeDetail({ recipeInfo }) {
   let recipe;
@@ -67,7 +68,6 @@ function RecipeDetail({ recipeInfo }) {
               ))}
             </ul>
           </div>
-          <div className="recipe__clear"></div>
           <div className="recipe__instructions">
             <h2 className="recipe__title recipe__title__sub-title">
               HOW TO PREPARE
@@ -81,7 +81,7 @@ function RecipeDetail({ recipeInfo }) {
           </div>
         </div>
       ) : (
-        <p>Not Found</p>
+        <Error></Error>
       )}
     </>
   );

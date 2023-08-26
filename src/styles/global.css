@@ -21,4 +21,11 @@
 input[type=text] {
   color: #AD006E;
   font-weight: bold;
+}
+
+.error {
+  font-size: 20px;
+  color: #AD006E;
+  font-weight: bold;
+  margin: auto;
 }/*# sourceMappingURL=global.css.map */

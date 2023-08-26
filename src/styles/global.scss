@@ -28,3 +28,8 @@ input[type=text] {
     font-size: 20px;
     color: $brand-pink;
 }
+.error {
+    @include brand-text-pink;
+    font-weight: bold;
+    margin: auto;
+}
