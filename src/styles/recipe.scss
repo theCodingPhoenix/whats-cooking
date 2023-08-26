@@ -1,3 +1,71 @@
+@import './variables.scss';
 .recipe {
+    &__title {
+            color: $brand-pink;
+            font-weight: bold;
+    
+            &__sub-title {
+                font-size: 20px;
+    
+                &--white {
+                    color: #FFF;
+                }
+            }
+    
+        }
+    
+        &__ingredient-list {
+    
+            margin-top: 1em;
+    
+            &__title {
+                padding-left: 1em;
+            }
+    
+            &__box {
+                text-align: left;
+                white-space: nowrap;
+                @include brand-box-border;
+                color: #FFF;
+                background-color: $brand-pink;
+                font-size: 24px;
+                font-weight: bold;
+            }
+    
+            &__items {
+                list-style: none;
+                padding: 1em;
+                padding-left: 0;
+            }
+    
+        }
+    
+        &__instructions {
+            color: $brand-pink;
+            font-size: medium;
+    
+            padding: 1em;
+            margin: 1em 0 0 0;
+            @include brand-box-border;
+    
+            &--no-line-style {
+                list-style: none;
+            }
+    
+        }
+    
+        &__instruction {
+            margin-top: 1em;
+            font-weight: 600;
+        }
     margin: 20px;
+img {
+    border-radius: 25px;
+}
+
+@media only screen and (max-width: 720px) {
+    img {
+        width: 100%;
+    }
+}
 }

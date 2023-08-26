@@ -6,6 +6,7 @@ function RecipeDetail({ recipeInfo }) {
   let ingredients = [];
   let measures = [];
   let lisOfIngredients = [];
+  let instructions = [];
 
   // lets build up an array of objects that will contain
   // ingredients required for the recipe and the measures
@@ -38,26 +39,46 @@ function RecipeDetail({ recipeInfo }) {
         });
       });
     }
+
+    // this will return empty element alternately
+    instructions = recipe.strInstructions.split("\r\n");
+    instructions = instructions.filter((instruction) => instruction.length > 1);
   }
 
   return (
     <>
       {recipe ? (
         <div className="recipe">
-          <p>{recipe.strMeal}</p>
+          <h1 className="recipe__title">{recipe.strMeal}</h1>
           <img
             src={recipe?.strMealThumb}
             alt={recipe.strMeal}
             title={recipe.strMeal}
           />
-          <ul>
-            {lisOfIngredients.map((requiredIngredient, index) => (
-              <li key={index}>
-                {requiredIngredient.measure} {requiredIngredient.ingredient}
-              </li>
+          <div className="recipe__ingredient-list recipe__ingredient-list__box recipe__ingredient-list__title">
+            <h2 className="recipe__title recipe__title__sub-title recipe__title__sub-title--white">
+              INGREDIENTS
+            </h2>
+            <ul className="recipe__ingredient-list recipe__ingredient-list__items ">
+              {lisOfIngredients.map((requiredIngredient, index) => (
+                <li key={index}>
+                  {requiredIngredient.measure} {requiredIngredient.ingredient}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="recipe__clear"></div>
+          <div className="recipe__instructions">
+            <h2 className="recipe__title recipe__title__sub-title">
+              HOW TO PREPARE
+            </h2>
+
+            {instructions.map((instruction, index) => (
+              <p className="recipe__instruction" key={index}>
+                {Number(index) + 1}. {instruction}
+              </p>
             ))}
-          </ul>
-          <div>{recipe.strInstructions}</div>
+          </div>
         </div>
       ) : (
         <p>Not Found</p>

@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .ingredient-list {
 
     grid-template-columns: 200px 200px;
@@ -10,10 +12,9 @@
         height: fit-content;
         margin: 15px;
         padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
         background: #fff;
         float: left;
+        @include brand-box-border;
 
         &:hover {
             box-shadow: 0 0 11px rgba(33, 33, 33, .2);

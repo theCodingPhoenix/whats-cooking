@@ -1,0 +1,6 @@
+$brand-pink: #AD006E;
+
+@mixin brand-box-border {
+    border-radius: 25px;
+    border: 1px solid $brand-pink;
+}
