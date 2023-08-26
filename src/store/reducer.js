@@ -8,7 +8,8 @@ import {
   FETCH_RECIPE_REQUEST,
   FETCH_RECIPE_SUCCESS,
   FETCH_RECIPE_ERROR,
-  FETCH_INGREDIENTS,
+  FILTER_INGREDIENTS,
+  FILTER_RECIPES,
 } from "./actionTypes";
 
 export const recipeReducer = (state, action) => {
@@ -24,6 +25,7 @@ export const recipeReducer = (state, action) => {
         ...state,
         ingredientsLoading: false,
         ingredients: action.payload,
+        filteredIngredients: action.payload,
       };
     }
     case FETCH_INGREDIENTS_ERROR: {
@@ -44,6 +46,7 @@ export const recipeReducer = (state, action) => {
         ...state,
         recipesLoading: false,
         recipes: action.payload,
+        filteredRecipes: action.payload,
       };
     }
     case FETCH_INGREDIENT_MEALS_ERROR: {
@@ -73,14 +76,24 @@ export const recipeReducer = (state, action) => {
         recipesError: true,
       };
     }
-    case FETCH_INGREDIENTS: {
+    case FILTER_INGREDIENTS: {
       return {
         ...state,
-        ingredients: state.ingredients.filter((ingrdient) =>
+        filteredIngredients: state.ingredients.filter((ingrdient) =>
           ingrdient.strIngredient.includes(action.param)
         ),
       };
     }
+
+    case FILTER_RECIPES: {
+      return {
+        ...state,
+        filteredRecipes: state.recipes.filter((recipe) =>
+          recipe.strMeal.includes(action.param)
+        ),
+      };
+    }
+
     default:
       return state;
   }

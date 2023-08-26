@@ -12,6 +12,8 @@ const initialState = {
   recipe: [],
   recipeLoading: false,
   recipeError: false,
+  filteredIngredients: [],
+  filteredReipes: [],
 };
 
 const RecipeContext = createContext({});

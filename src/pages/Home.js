@@ -6,7 +6,8 @@ import SearchBar from "../components/SearchBar";
 import { getFilteredIngredients, fetchIngredients } from "../store/actions";
 
 const Home = () => {
-  const { ingredients, ingredientsLoading, dispatch } = useRecipeContext();
+  const { ingredients, ingredientsLoading, filteredIngredients, dispatch } =
+    useRecipeContext();
   const [searchIngredient, setSearchIngredient] = useState("");
 
   const handleOnSearchChange = (search) => {
@@ -33,7 +34,7 @@ const Home = () => {
         {ingredientsLoading ? (
           "Loading"
         ) : (
-          <IngredientsList ingredients={ingredients}> </IngredientsList>
+          <IngredientsList ingredients={filteredIngredients}> </IngredientsList>
         )}
       </div>
     </>
