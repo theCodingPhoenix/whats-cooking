@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+.search {
+    @include brand-box-border;
+    margin: 1em;
+    height: 50px;
+    color: $brand-pink;
+    width: auto;
+}
