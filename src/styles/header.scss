@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+.header {
+
+    @include brand-box;
+
+    &__title {
+        text-align: center;
+    }
+}

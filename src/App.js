@@ -1,4 +1,5 @@
 import "./App.css";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Ingredient from "./pages/Ingredient";
 import Recipe from "./pages/Recipe";
@@ -7,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <Header></Header>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
