@@ -28,7 +28,7 @@ const Home = () => {
     <>
       <SearchBar
         handleOnSearchChange={handleOnSearchChange}
-        placeholderText="Ingredients"
+        placeholderText="Search Ingredients"
       ></SearchBar>
       <div>
         {ingredientsLoading ? (

@@ -3,8 +3,10 @@
 .header {
 
     @include brand-box;
+    padding: 0.5em;
 
     &__title {
         text-align: center;
+        font-size: 24px;
     }
 }

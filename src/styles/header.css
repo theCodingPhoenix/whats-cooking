@@ -1,7 +1,9 @@
 .header {
   color: #FFF;
   background-color: #AD006E;
+  padding: 0.5em;
 }
 .header__title {
   text-align: center;
+  font-size: 24px;
 }/*# sourceMappingURL=header.css.map */

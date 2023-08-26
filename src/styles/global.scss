@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 200px 200px;
+
+    @media only screen and (min-width: 468px) {
+        grid-template-columns: 1fr 1fr
+    }
+
+    @media only screen and (min-width: 720px) {
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    img {
+        width: 100%;
+    }
+}
+
+input[type=text] {
+    color: $brand-pink;
+    font-weight: bold;
+}
+
+@mixin brand-text-pink {
+    font-size: 20px;
+    color: $brand-pink;
+}

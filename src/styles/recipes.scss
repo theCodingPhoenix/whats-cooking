@@ -1,9 +1,14 @@
 @import "../styles/variables.scss";
+@import "../styles/global.scss";
 
 .recipes {
 
     margin: 1em;
 
+    &__info {
+            @include brand-text-pink;
+            font-weight: bold
+        }
 
     &__name {
         @include title;

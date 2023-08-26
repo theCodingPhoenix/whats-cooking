@@ -30,7 +30,7 @@ const Ingredient = () => {
         placeholderText="Search Recipes..."
       ></SearchBar>
       {filteredRecipes?.length ? (
-        <RecipeList recipes={filteredRecipes} />
+        <RecipeList recipes={filteredRecipes} ingredient={name} />
       ) : null}
     </>
   );
