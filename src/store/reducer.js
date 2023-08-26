@@ -8,6 +8,7 @@ import {
   FETCH_RECIPE_REQUEST,
   FETCH_RECIPE_SUCCESS,
   FETCH_RECIPE_ERROR,
+  FETCH_INGREDIENTS,
 } from "./actionTypes";
 
 export const recipeReducer = (state, action) => {
@@ -70,6 +71,14 @@ export const recipeReducer = (state, action) => {
         ...state,
         recipeLoading: false,
         recipesError: true,
+      };
+    }
+    case FETCH_INGREDIENTS: {
+      return {
+        ...state,
+        ingredients: state.ingredients.filter((ingrdient) =>
+          ingrdient.strIngredient.includes(action.param)
+        ),
       };
     }
     default:

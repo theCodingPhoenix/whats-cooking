@@ -9,6 +9,7 @@ import {
   FETCH_RECIPE_REQUEST,
   FETCH_RECIPE_SUCCESS,
   FETCH_RECIPE_ERROR,
+  FETCH_INGREDIENTS,
 } from "./actionTypes";
 
 const axiosCall = axios.create({
@@ -65,4 +66,11 @@ export const fetchRecipeById = async (dispatch, id) => {
       payload: error.message,
     });
   }
+};
+
+export const getFilteredIngredients = (dispatch, search) => {
+  dispatch({
+    type: FETCH_INGREDIENTS,
+    param: search,
+  });
 };
