@@ -1,0 +1,16 @@
+.recipes {
+  margin: 1em;
+}
+.recipes__name {
+  color: #AD006E;
+  font-weight: bold;
+  margin-top: 2em;
+}
+.recipes img {
+  border-radius: 25px;
+}
+@media only screen and (max-width: 720px) {
+  .recipes img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=recipes.css.map */

@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.recipes {
+
+    margin: 1em;
+
+
+    &__name {
+        @include title;
+        margin-top: 2em;
+    }
+
+    img {
+        border-radius: 25px;
+    }
+
+    @media only screen and (max-width: 720px) {
+        img {
+            width: 100%;
+        }
+    }
+}

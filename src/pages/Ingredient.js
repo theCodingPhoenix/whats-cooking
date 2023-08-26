@@ -13,12 +13,7 @@ const Ingredient = () => {
     fetchRecipesByIngredient(dispatch, name);
   }, [name, dispatch]);
 
-  return (
-    <>
-      <h1>{name}</h1>
-      {recipes?.length ? <RecipeList recipes={recipes} /> : null}
-    </>
-  );
+  return <>{recipes?.length ? <RecipeList recipes={recipes} /> : null}</>;
 };
 
 export default Ingredient;

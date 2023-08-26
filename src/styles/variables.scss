@@ -8,3 +8,7 @@ $brand-pink: #AD006E;
     color: #FFF;
     background-color: $brand-pink;
 }
+@mixin title {
+    color: $brand-pink;
+    font-weight: bold;
+}

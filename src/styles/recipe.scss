@@ -1,8 +1,7 @@
 @import './variables.scss';
 .recipe {
     &__title {
-            color: $brand-pink;
-            font-weight: bold;
+            @include title;
     
             &__sub-title {
                 font-size: 20px;
